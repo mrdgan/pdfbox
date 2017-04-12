@@ -77,7 +77,7 @@ public class PDFText2HTML extends PDFTextStripper
                 + "\"http://www.w3.org/TR/html4/loose.dtd\">\n");
         buf.append("<html><head>");
         buf.append("<title>").append(escape(getTitle())).append("</title>\n");
-        buf.append("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=\"UTF-8\">\n");
+        buf.append("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
         buf.append("</head>\n");
         buf.append("<body>\n");
         super.writeString(buf.toString());
@@ -234,7 +234,8 @@ public class PDFText2HTML extends PDFTextStripper
         if ((character < 32) || (character > 126))
         {
             int charAsInt = character;
-            builder.append("&#").append(charAsInt).append(";");
+          //  builder.append("&#").append(charAsInt).append(";"); 
+            builder.append(character); 
         }
         else
         {
